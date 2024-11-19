@@ -3,7 +3,7 @@ from keras.models import load_model
 from keras.preprocessing.image import img_to_array
 from keras.preprocessing.image import load_img
 
-model = load_model('//cnn_model/skin_cancer_model.keras')
+model = load_model('//cnn_model/skin_cancer_tl_weights')
 
 
 class ModelPredict:
