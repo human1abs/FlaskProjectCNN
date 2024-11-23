@@ -1,6 +1,7 @@
 import os
 import uuid
 
+from sqlalchemy import delete
 from werkzeug.exceptions import NotFound
 
 from cnn_model.model_run import ModelPredict
