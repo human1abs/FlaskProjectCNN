@@ -1,3 +1,4 @@
+from sqlalchemy import delete
 from werkzeug.exceptions import BadRequest
 from werkzeug.security import check_password_hash, generate_password_hash
 
