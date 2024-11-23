@@ -34,13 +34,8 @@ class UserManager:
 
     @staticmethod
     def delete(id_):
-        user = db.session.execute(db.select(UserModel).filter_by(id=id_)).scalar()
-        print(user)
-        query = db.session.execute(db.select(CancerCheckModel).filter_by(user_id=id_)).scalars().all()
-        if query:
-            for q in query:
-                db.session.delete(q)
-        db.session.delete(user)
+        db.session.execute(delete(CancerCheckModel.__table__).where(CancerCheckModel.user_id == id_))
+        db.session.execute(delete(UserModel.__table__).where(UserModel.id == id_))
         db.session.flush()
 
         return f"Your account was successfully deleted"
